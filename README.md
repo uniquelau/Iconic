@@ -12,10 +12,8 @@ With Iconic you will be able to create a property editor that can use virtually 
 ### Umbraco Package
 [![Umb](https://img.shields.io/badge/Package-download-green.svg)](https://our.umbraco.org/projects/backoffice-extensions/iconic/)
 
-
 ### Manually
 Download the code and copy it into you App_Plugin folder.
-
 
 ## Configuration
 Once the plugin is installed is time to configure it to your needs.
@@ -36,28 +34,28 @@ On the Packages Configuration property, click the Add button. This will display 
 2. Create your selector. This will use regex to extract your icons css from the font package.
 3. Source file path. This file will contains the specific configuration for each icon.
    To extract the rules the previous regex rule will be used.
-4. Path to your font package css file.
-    * You can use absolute paths: http:\\www.yoursite.com\sytles\fonts\my-font-package.css. This allows you to use external files, like the ones from a CDN.
+4. Path to your font package CSS file.
+    * You can use absolute paths: http:\\www.yoursite.com\styles\fonts\my-font-package.css. This allows you to use external files, like the ones from a CDN.
     * Or relative to the root: \styles\fonts\my-font-package.css
     This file will be loaded in the head of your backoffice and will affect the whole view so be careful of what you load there. Check the Known Issues section for some more info.
 
 5. Template. This will be the template your icon will be based on. You can use the value {icon} as placeholder for your icon specific rule. For instance, for Font Awesome you should enter something like: <i class="fa {icon}"></i>
-6. Click *Add Package* to add the configuration to your packages listing. Before adding the package, Iconic will extract the css rules from the file using the regex selector. Some checking is ran that will let you know if something went wrong with your configuration.
+6. Click *Add Package* to add the configuration to your packages listing. Before adding the package, Iconic will extract the CSS rules from the file using the regex selector. Some checking is ran that will let you know if something went wrong with your configuration.
 
 <img src="https://github.com/KOBENDigital/Iconic/blob/master/Documentation/addPackage.png" width="600" alt="Add package" >
 
 
 #### Icons source file
-Some packages like Font Awesome use css rules to apply the specific icon:
+Some packages like Font Awesome use CSS rules to apply the specific icon:
 ```
 <i class="fa fa-glass"></i> (Template: <i class="fa {icon}"></i>)
 ```
 
-Other packages like Material Icons use the glyph codes or even ligatures to display the icon instead a specific css selector. 
+Other packages like Material Icons use the glyph codes or even ligatures to display the icon instead a specific CSS selector. 
 ```
 <i class="material-icons">alarm</i> (Template: <i class="material-icons">{icon}</i>)
 ```
-So this file can be the same css file or another files use to extrac the icons property. In the case of Material Icons for instance there is a file called <a href="https://github.com/google/material-design-icons/blob/master/iconfont/codepoints">codepoints</a> where you can extract the icons names from.
+So this file can be the same CSS file or another files use to extract the icons property. In the case of Material Icons for instance there is a file called <a href="https://github.com/google/material-design-icons/blob/master/iconfont/codepoints">codepoints</a> where you can extract the icons names from.
 
 
 #### Pre configured packages
@@ -74,7 +72,7 @@ Once you have configured your datatype, you can use it as a property editor.
 
 <img src="https://github.com/KOBENDigital/Iconic/blob/master/Documentation/select-editor.png" width="300" alt="Create property" >
 
-To add or modify your icon just click on the placeholder, this will open a dialog where you can select form your configured packages. Once a package is selected, all the icons will be displayed below.
+To add or modify your icon just click on the placeholder, this will open a dialog where you can select from your configured packages. Once a package is selected, all the icons will be displayed below.
 <img src="https://github.com/KOBENDigital/Iconic/blob/master/Documentation/using-iconic.png" width="600" alt="Using Iconic" >
 
 ### Displaying the icon
@@ -89,7 +87,7 @@ Remember to wrap the icon in Html.Raw so Razor displays the returned html proper
 ## Known issues
 
 ### Glyphicons
-If you try to use Glyphicons as part of the Bootstrap package, you will realise that the whole css file will be loaded on your backoffice. This might brake some of the backoffice functionality, i.e. buttons or the grid editor. To avoid this you should export the Glyphicons classes into their own separate file. You can do this from [this link](https://getbootstrap.com/docs/3.3/customize/) and select only Glyphicons from the **Components** section.
+If you try to use Glyphicons as part of the Bootstrap package, you will realise that the whole css file will be loaded on your backoffice. This might break some of the backoffice functionality, i.e. buttons or the grid editor. To avoid this you should export the Glyphicons classes into their own separate file. You can do this from [this link](https://getbootstrap.com/docs/3.3/customize/) and select only Glyphicons from the **Components** section.
 
 
 # Umbraco Versions
